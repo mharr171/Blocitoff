@@ -1,0 +1,13 @@
+<div class='pure-u-5-5'>
+  <% if current_user %>
+  <h3>Welcome <%= @user.username %></h3>
+  <% else %>
+    <h1 class='center'>Welcome to Blocitoff</h1>
+    <br />
+    <h4>What is Blocitoff?</h4>
+    <p>
+      Blocitoff is an online to do list app with a twist. Instead of letting your items sit on your list forever when you inevitably forget to check them off, your items will expire 7 days after their creation. If you aren't going to do it within 7 days should it really be on your todo list?
+    </p>
+    <%= link_to "Try it today!", new_user_registration_path, class:'pure-button pure-button-primary' %>
+  <% end %>
+</div>
