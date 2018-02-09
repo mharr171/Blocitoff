@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+$menu_background: rgba(255,255,255,0.3);
 
 body {
   background: linear-gradient(to bottom right, rgba(0,0,255,0.3), rgba(155,200,0,0.3));
@@ -27,4 +28,37 @@ body {
   min-height: 300px;
   padding: 10px 15px;
   box-shadow: 2px 3px 8px rgba(0, 0, 0, .3);
+}
+
+.pure-menu {
+  background-color: $menu_background;
+}
+
+.pure-menu-item a {
+  margin: 0 15px;
+}
+
+a:link  {
+  /* Applies to all unvisited links */
+  text-decoration:  none;
+  color:            inherit;
+}
+a:visited {
+  /* Applies to all visited links */
+  text-decoration:  none;
+  color:            inherit;
+}
+a:hover {
+  /* Applies to links under the pointer */
+  text-decoration:  underline;
+  color:            inherit;
+}
+a:active  {
+  /* Applies to activated links */
+  text-decoration:  underline;
+  color: 						white;
+}
+
+.center {
+  text-align: center;
 }
