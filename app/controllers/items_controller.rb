@@ -12,6 +12,18 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @item = Item.find(params[:id])
+
+    if @item.destroy
+      flash[:notice] = 'Item was completed.'
+      redirect_to root_path
+    else
+      flash[:alert] = 'There was an error completing the item. Please try again.'
+      redirect_to root_path
+    end
+  end
+
   private
 
   def item_params

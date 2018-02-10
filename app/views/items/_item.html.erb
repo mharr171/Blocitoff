@@ -1,4 +1,11 @@
-<tr>
+<tr id="<%= item.id %>">
+  <% if current_user == @user %>
+    <td class='center w-10'>
+      <%= link_to user_item_path(@user,item), method: :delete do %>
+        <i class="fal fa-times"></i>
+      <% end %>
+    </td>
+  <% end %>
   <% if item.created_at+7.days < Time.now %>
   <td class='center red w-20'>
     <small><%= distance_of_time_in_words(Time.now,item.created_at+7.days) + " overdue" %></small>
@@ -8,5 +15,7 @@
     <small><%= distance_of_time_in_words(Time.now,item.created_at+7.days) + " left" %></small>
   </td>
   <% end %>
+
+
   <td><%= item.name %></td>
 </tr>

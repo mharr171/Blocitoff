@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
 
   resources :users, only: [:index, :show] do
-    resources :items, only: [:create]
+    resources :items, only: [:create,:destroy]
   end
 
   root 'users#show'
