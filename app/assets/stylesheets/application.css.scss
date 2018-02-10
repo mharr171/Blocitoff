@@ -32,6 +32,7 @@ body {
 
 .pure-menu {
   background-color: $menu_background;
+  margin-bottom: 2em;
 }
 
 .pure-menu-item a {
@@ -61,4 +62,20 @@ a:active  {
 
 .center {
   text-align: center;
+}
+
+.border {
+  border: 1px solid black;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.list {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.item-input {
+  margin-bottom: 1em;
 }

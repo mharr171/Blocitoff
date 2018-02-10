@@ -1,0 +1,4 @@
+<%= form_for [@user, @item], html: {class:'pure-form'} do |f| %>
+  <%= f.text_field :name, placeholder: "Enter a new task" %>
+  <%= f.submit "Create", class: 'pure-button pure-button-primary' %>
+<% end %>

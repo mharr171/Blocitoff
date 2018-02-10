@@ -1,13 +1,42 @@
-<div class='pure-u-5-5'>
+
   <% if current_user %>
-  <h3>Welcome <%= @user.username %></h3>
+
+    <% if current_user == @user %>
+      <div class='pure-u-5-5 center item-input'>
+        <%= render partial: '/items/form', locals: {user: @user,item: @item} %>
+      </div>
+    <% end %>
+
+    <div class='pure-u-5-5'>
+      <table class='pure-table pure-table-horizontal list'>
+        <tbody>
+          <% if @items.any? %>
+            <% @items.each do |item| %>
+              <%= render partial: '/items/item', locals: {item: item} %>
+            <% end %>
+          <% else %>
+            <h5 class='center'>You have no tasks!</h5>
+          <% end%>
+        </tbody>
+      </table>
+    </div>
+
   <% else %>
-    <h1 class='center'>Welcome to Blocitoff</h1>
-    <br />
-    <h4>What is Blocitoff?</h4>
-    <p>
-      Blocitoff is an online to do list app with a twist. Instead of letting your items sit on your list forever when you inevitably forget to check them off, your items will expire 7 days after their creation. If you aren't going to do it within 7 days should it really be on your todo list?
-    </p>
-    <%= link_to "Try it today!", new_user_registration_path, class:'pure-button pure-button-primary' %>
+
+    <div class='pure-u-5-5'>
+      <h1 class='center'>Welcome to Blocitoff</h1>
+    </div>
+    <div class='pure-u-2-5'>
+      <h3>What is Blocitoff?</h3>
+    </div>
+    <div class='pure-u-3-5'>
+      <p>
+        Blocitoff is an online to do list app with a twist. Instead of letting your items sit on your list forever when you inevitably forget to check them off, your items will expire 7 days after their creation. If you aren't going to do it within 7 days should it really be on your todo list?
+      </p>
+    </div>
+
+    <div class='pure-u-5-5 center'>
+      <%= link_to "Try it today!", new_user_registration_path, class:'pure-button pure-button-primary' %>
+    </div>
+
   <% end %>
-</div>

@@ -1,5 +1,8 @@
 <% if current_user %>
   <li class="pure-menu-item">
+    <%= link_to 'User Index', users_path %>
+  </li>
+  <li class="pure-menu-item">
     <%= link_to 'Edit Profile', edit_user_registration_path %>
   </li>
   <li class="pure-menu-item">
