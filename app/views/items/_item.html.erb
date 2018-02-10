@@ -1,7 +1,7 @@
-<tr id="<%= item.id %>">
+<tr id="item<%= item.id %>">
   <% if current_user == @user %>
     <td class='center w-10'>
-      <%= link_to user_item_path(@user,item), method: :delete do %>
+      <%= link_to user_item_path(@user,item), method: :delete, remote: true do %>
         <i class="fal fa-times"></i>
       <% end %>
     </td>

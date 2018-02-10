@@ -13,15 +13,22 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find(params[:id])
+    @item = Item.destroy(params[:id])
 
-    if @item.destroy
-      flash[:notice] = 'Item was completed.'
-      redirect_to root_path
-    else
-      flash[:alert] = 'There was an error completing the item. Please try again.'
-      redirect_to root_path
+    respond_to do |f|
+      f.html { redirect_to root_path }
+      f.js
     end
+
+    # @item = Item.find(params[:id])
+
+    # if @item.destroy
+    #   flash[:notice] = 'Item was completed.'
+    #   redirect_to root_path
+    # else
+    #   flash[:alert] = 'There was an error completing the item. Please try again.'
+    #   redirect_to root_path
+    # end
   end
 
   private
