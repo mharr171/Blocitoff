@@ -11,6 +11,6 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.all.select{ |u| u.items.any? }
   end
 end

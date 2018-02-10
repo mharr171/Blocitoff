@@ -1,6 +1,7 @@
 <div class='pure-u-5-5 center'>
-  <ul>
-    <% @users.each do |user| %>
+  <h2>Users Trying to Complete Tasks</h2>
+  <ul style='list-style:none;padding-left:0;'>
+    <% @users.sort_by{|u|u.items.sort_by{|i|i.created_at}.first.created_at}[0..10].each do |user| %>
       <li><%= link_to user.username, user_path(user) %></li>
     <% end %>
   </ul>

@@ -12,7 +12,7 @@
   </td>
   <% else %>
   <td class='center green w-20'>
-    <small><%= distance_of_time_in_words(Time.now,item.created_at+7.days) + " left" %></small>
+    <small><%= distance_of_time_in_words(item.created_at,Time.now) + " ago" %></small>
   </td>
   <% end %>
 
