@@ -11,7 +11,7 @@
       <table class='pure-table pure-table-horizontal list'>
         <tbody>
           <% if @items.any? %>
-            <% @items.each do |item| %>
+            <% @items.sort_by{|i|i.created_at}.each do |item| %>
               <%= render partial: '/items/item', locals: {item: item} %>
             <% end %>
           <% else %>

@@ -1,4 +1,12 @@
 <tr>
-  <td class='center'><%= "time" %></td>
+  <% if item.created_at+7.days < Time.now %>
+  <td class='center red w-20'>
+    <small><%= distance_of_time_in_words(Time.now,item.created_at+7.days) + " overdue" %></small>
+  </td>
+  <% else %>
+  <td class='center green w-20'>
+    <small><%= distance_of_time_in_words(Time.now,item.created_at+7.days) + " left" %></small>
+  </td>
+  <% end %>
   <td><%= item.name %></td>
 </tr>
