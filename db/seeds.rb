@@ -2,17 +2,17 @@ require 'faker'
 
 Faker::Internet.unique.clear
 
-# Create My Account
-my_account = User.new(
-  username: 'mharr171',
-  email:    'mharr171.z@gmail.com',
-  password: 'asdf123'
-)
-my_account.skip_confirmation!
-my_account.save!
-puts '.'
+# # Create My Account
+# my_account = User.new(
+#   username: 'mharr171',
+#   email:    'mharr171.z@gmail.com',
+#   password: 'asdf123'
+# )
+# my_account.skip_confirmation!
+# my_account.save!
+# puts '.'
 
-10.times do
+3.times do
   username = Faker::Internet.unique.user_name
   User.create!(
     username: username,
